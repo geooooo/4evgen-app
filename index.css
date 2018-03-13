@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    list-style-type: none;
+}
+
+
+html,
+body {
+    height: 100%;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #3d5242;
+}
+
+
+.menu__button {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.menu__button:hover {
+    background-color: rgb(82, 96, 85);
+}
+
+
+.menu__button:active {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+
+.window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.window_hide {
+    display: none;
+}
+
+
+.window__outer-shadow {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: #00000067;
+}
+
+
+.window__content {
+    position: absolute;
+    z-index: 2;
+    border: 2px solid black;
+    border-top: 10px solid #3d5242;
+    padding: 10px;
+    padding-top: 20px;
+    width: 400px;
+    background-color: #ddd;
+}
+
+
+.window__close-button {
+    margin: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+    padding: 3px;
+    width: 100px;
+    text-align: center;
+    color: white;
+    background-color: #3d5242;
+    cursor: pointer;
+}
+
+
+.window__close-button:hover {
+    background-color: rgb(82, 96, 85);
+}
+
+
+.window__close-button:active {
+    background-color: transparent;
+}
+
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 100px; */
+    height: 100%;
+}
+
+
+.seq {
+    display: flex;
+    width: 90%;
+    overflow-x: auto;
+}
+
+
+.seq__number,
+.seq__value {
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.seq__number {
+    font-weight: bold;
+    color: white;
+    background-color: #3d5242;
+}
+
+
+.seq__value_red {
+    background-color: red;
+}
+
+
+.seq__value_orange {
+    background-color: orange;
+}
+
+
+.seq__value_yellow {
+    background-color: yellow;
+}
+
+
+.seq__value_green {
+    background-color: green;
+}
+
+
+.seq__value_lightblue {
+    background-color: lightblue;
+}
+
+
+.seq__value_blue {
+    background-color: blue;
+}
+
+
+.seq__value_purple {
+    background-color: purple;
+}
