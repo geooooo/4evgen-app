@@ -60,17 +60,18 @@ body {
 
 
 .window__outer-shadow {
-    position: absolute;
-    z-index: 1;
+    position: fixed;
+    z-index: 100;
     height: 100%;
     width: 100%;
-    background-color: #00000067;
+    background: black;
+    opacity: 0.5;
 }
 
 
 .window__content {
     position: absolute;
-    z-index: 2;
+    z-index: 101;
     border: 2px solid black;
     border-top: 10px solid #3d5242;
     padding: 10px;
@@ -108,7 +109,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-top: 100px; */
     height: 100%;
 }
 
