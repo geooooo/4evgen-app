@@ -15,6 +15,25 @@ body {
 }
 
 
+body {
+    font-size: 18px;
+}
+
+
+u {
+    color: red;
+}
+
+
+.header {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: white;
+    background-color: #3d5242;
+}
+
+
 .menu {
     display: flex;
     justify-content: center;
@@ -23,11 +42,12 @@ body {
 
 
 .menu__button {
-    border-right: 1px solid black;
-    border-left: 1px solid black;
+    border: 1px solid black;
+    /* border-right: 3px solid black; */
     padding: 20px;
     color: white;
     cursor: pointer;
+    text-align: center;
 }
 
 
@@ -107,9 +127,33 @@ body {
 
 .main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100%;
+}
+
+
+.main > * {
+    margin-top: 20px;
+}
+
+
+.info {
+    display: flex;
+    width: 90%;
+    justify-content: flex-start;
+}
+
+
+.info > img {
+    border: 1px solid black;
+    margin-right: 50px;
+    padding: 5px;
+    background-color: #00000030;
+}
+
+
+.info > img:last-child {
+    margin-right: 0;
 }
 
 
@@ -120,10 +164,33 @@ body {
 }
 
 
+.seq__header {
+    border: 1px solid black;
+    padding: 10px;
+    width: 150px;
+    padding-top: 35px;
+    text-align: center;
+    background-color: #00000030;
+}
+
+
+.seq__number-header,
+.seq__value-header {
+    border: 1px solid black;
+    height: 80px;
+    width: 80px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #00000030;
+}
+
+
 .seq__number,
 .seq__value {
     border: 1px solid black;
-    padding: 20px;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
     text-align: center;
 }
 
@@ -132,39 +199,4 @@ body {
     font-weight: bold;
     color: white;
     background-color: #3d5242;
-}
-
-
-.seq__value_red {
-    background-color: red;
-}
-
-
-.seq__value_orange {
-    background-color: orange;
-}
-
-
-.seq__value_yellow {
-    background-color: yellow;
-}
-
-
-.seq__value_green {
-    background-color: green;
-}
-
-
-.seq__value_lightblue {
-    background-color: lightblue;
-}
-
-
-.seq__value_blue {
-    background-color: blue;
-}
-
-
-.seq__value_purple {
-    background-color: purple;
 }
