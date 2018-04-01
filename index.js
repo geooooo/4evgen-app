@@ -10,7 +10,6 @@ window.addEventListener("load", function() {
 
     var minNumber = 0;
     var maxNumber = 1065;
-    var colorCount = 100;
     var countNumber = maxNumber - minNumber;
 
 
@@ -46,7 +45,6 @@ window.addEventListener("load", function() {
                 }
                 var c2 = 0;
                 var c3 = 255;
-                // console.log(number, `rgb(${c1}, ${c2}, ${c3})`);
             } else if (number > maxNumber * 4/7) {
                 var c1 = 0;
                 var c2 = 136 - (Math.trunc(maxNumber / 7 / 136 * number)) % 136;
@@ -57,7 +55,6 @@ window.addEventListener("load", function() {
                     c2 = 0;
                 }
                 var c3 = 255;
-                // console.log(number, `rgb(${c1}, ${c2}, ${c3})`);
             } else if (number > maxNumber * 3/7) {
                 var c1 = 0;
                 var c2 = 255 - (Math.trunc(maxNumber / 7 / 136) * number) % 255;
@@ -68,12 +65,10 @@ window.addEventListener("load", function() {
                 if (c3 > 255) {
                     c3 = 255;
                 }
-                // console.log(number, `rgb(${c1}, ${c2}, ${c3})`);
             } else if (number > maxNumber * 2/7) {
                 var c1 = 255 - ((Math.trunc(maxNumber / 7 / 136) * number) - 255);
                 var c2 = 255;
                 var c3 = 0;
-                // console.log(number, `rgb(${c1}, ${c2}, ${c3})`);
             } else if (number > maxNumber * 1/7) {
                 var c1 = 255;
                 var c2 = Math.trunc(maxNumber / 7 / 136) * number;
@@ -81,7 +76,6 @@ window.addEventListener("load", function() {
                     c2 = 255;
                 }
                 var c3 = 0;
-                // console.log(number, `rgb(${c1}, ${c2}, ${c3})`);
             } else {
                 var c1 = 255;
                 var c2 = Math.trunc(maxNumber / 7 / 136) * number;
@@ -89,7 +83,6 @@ window.addEventListener("load", function() {
                     c2 = 136;
                 }
                 var c3 = 0;
-                // console.log(number, `rgb(${c1}, ${c2}, ${c3})`);
             }
             seqValue.classList.add("seq__value");
             seqValue.innerHTML = "V<sub>" + number + "</sub>";
@@ -100,21 +93,27 @@ window.addEventListener("load", function() {
             seqItem.appendChild(seqValue);
             seqSrc.appendChild(seqItem);
         }
+        createSrcSeq.removeEventListener("click", arguments.callee);
     });
 
 
     createOutSeq.addEventListener("click", function() {
         for (var number = minNumber; number <= maxNumber; number++) {
-            var new_number = l(number);
-            var a_html = seq.childNodes[number].childNodes[1].innerHTML;
-            var b_html = seq.childNodes[new_number].childNodes[1].innerHTML;
-            var a_class = seq.childNodes[number].childNodes[1].className;
-            var b_class = seq.childNodes[new_number].childNodes[1].className;
-            seq.childNodes[number].childNodes[1].innerHTML = b_html;
-            seq.childNodes[new_number].childNodes[1].innerHTML = a_html;
-            seq.childNodes[number].childNodes[1].className = b_class;
-            seq.childNodes[new_number].childNodes[1].className = a_class;
+            seqRes.appendChild(seqSrc.childNodes[5+number].cloneNode(true));
         }
+        seq = seqRes;
+        for (var number = minNumber; number <= maxNumber; number++) {
+            var new_number = l(number);
+            var a_html = seq.childNodes[5+number].childNodes[1].innerHTML;
+            var b_html = seq.childNodes[5+new_number].childNodes[1].innerHTML;
+            var a_style = seq.childNodes[5+number].childNodes[1].style.backgroundColor;
+            var b_style = seq.childNodes[5+new_number].childNodes[1].style.backgroundColor;
+            seq.childNodes[5+number].childNodes[1].innerHTML = b_html;
+            seq.childNodes[5+new_number].childNodes[1].innerHTML = a_html;
+            seq.childNodes[5+number].childNodes[1].style.backgroundColor = b_style;
+            seq.childNodes[5+new_number].childNodes[1].style.backgroundColor = a_style;
+        }
+        createOutSeq.removeEventListener("click", arguments.callee);
     });
 
 

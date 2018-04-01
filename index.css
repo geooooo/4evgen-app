@@ -176,10 +176,12 @@ u {
 
 .seq__number-header,
 .seq__value-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
     height: 80px;
-    width: 80px;
-    line-height: 40px;
+    width: 200px;
     text-align: center;
     background-color: #00000030;
 }

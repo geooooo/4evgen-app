@@ -6,7 +6,8 @@ function createWindow () {
     win = new BrowserWindow({
         width: 800,
         height: 600,
-        devTools: false
+        devTools: false,
+        title: "Перемежитель"
     });
     win.setMenu(null);
 
