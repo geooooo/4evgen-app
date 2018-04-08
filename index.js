@@ -5,8 +5,8 @@ window.addEventListener("load", function() {
     var showAbout = document.getElementById("showAbout");
     var windowAbout = document.getElementById("windowAbout");
     var closeWindowAbout = document.getElementById("closeWindowAbout");
-    var seqSrc = document.getElementById("seqSrc");
-    var seqRes = document.getElementById("seqRes");
+    var seqSrc = document.querySelector("#seqSrc .seq__content");
+    var seqRes = document.querySelector("#seqRes .seq__content");
 
     var minNumber = 0;
     var maxNumber = 1065;
@@ -99,19 +99,19 @@ window.addEventListener("load", function() {
 
     createOutSeq.addEventListener("click", function() {
         for (var number = minNumber; number <= maxNumber; number++) {
-            seqRes.appendChild(seqSrc.childNodes[5+number].cloneNode(true));
+            seqRes.appendChild(seqSrc.childNodes[number].cloneNode(true));
         }
         seq = seqRes;
         for (var number = minNumber; number <= maxNumber; number++) {
             var new_number = l(number);
-            var a_html = seq.childNodes[5+number].childNodes[1].innerHTML;
-            var b_html = seq.childNodes[5+new_number].childNodes[1].innerHTML;
-            var a_style = seq.childNodes[5+number].childNodes[1].style.backgroundColor;
-            var b_style = seq.childNodes[5+new_number].childNodes[1].style.backgroundColor;
-            seq.childNodes[5+number].childNodes[1].innerHTML = b_html;
-            seq.childNodes[5+new_number].childNodes[1].innerHTML = a_html;
-            seq.childNodes[5+number].childNodes[1].style.backgroundColor = b_style;
-            seq.childNodes[5+new_number].childNodes[1].style.backgroundColor = a_style;
+            var a_html = seq.childNodes[number].childNodes[1].innerHTML;
+            var b_html = seq.childNodes[new_number].childNodes[1].innerHTML;
+            var a_style = seq.childNodes[number].childNodes[1].style.backgroundColor;
+            var b_style = seq.childNodes[new_number].childNodes[1].style.backgroundColor;
+            seq.childNodes[number].childNodes[1].innerHTML = b_html;
+            seq.childNodes[new_number].childNodes[1].innerHTML = a_html;
+            seq.childNodes[number].childNodes[1].style.backgroundColor = b_style;
+            seq.childNodes[new_number].childNodes[1].style.backgroundColor = a_style;
         }
         createOutSeq.removeEventListener("click", arguments.callee);
     });
